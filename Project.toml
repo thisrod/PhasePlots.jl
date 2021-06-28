@@ -1,0 +1,17 @@
+name = "PhasePlots"
+uuid = "349e0b94-16c6-46d1-9b3f-4237bdd37240"
+authors = ["Rodney Polkinghorne <rpolkinghorne@swin.edu.au>"]
+version = "0.1.0"
+
+[deps]
+ColorTypes = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
+RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
+
+[compat]
+julia = "^1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
