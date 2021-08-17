@@ -4,7 +4,7 @@ using RecipesBase, ColorTypes
 
 @userplot PhasePlot
 
-@recipe function f(p::PhasePlot; clim=nothing)
+@recipe function f(p::PhasePlot; clim=nothing, γ=2)
     x, y, z = p.args
     isnothing(clim) && (clim = maximum(abs, z))
     extend(x, n) = (h = (x[end]-x[begin])/2(n-1); [x[begin]-h, x[end]+h])
@@ -20,7 +20,7 @@ using RecipesBase, ColorTypes
     tick_direction --> :out
     
     N = transpose(z)
-    x, y, @. HSVA(360/2π*angle(N), 1, !iszero(N), abs(N)/clim)
+    x, y, @. HSVA(360/2π*angle(N), 1, !iszero(N), (abs(N)/clim)^γ)
 end
 
 @doc """
